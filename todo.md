@@ -1,3 +1,3 @@
 # To-do
-Define list of functions that need to be created
-Set up HUnit testing framework
+1. Define list of functions that need to be created
+2. Set up HUnit testing framework
