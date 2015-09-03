@@ -46,3 +46,5 @@ To ensure everything worked, SSH back into your virtual machine and run the foll
 	$ ghci --version
 
 If the command returns a version, everything should be good to go.
+
+When you are in the Vagrant environment, all Haxicon files will live in /Haxicon.
