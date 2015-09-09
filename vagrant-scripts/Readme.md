@@ -25,8 +25,9 @@ Download a virtual machine box:
 Modify the Vagrantfile that was created so that it only reads:
 
 	Vagrant.configure(2) do |config|
-	  	config.vm.box = "hashicorp/precise32"
+  		config.vm.box = "hashicorp/precise32"
   		config.vm.provision "shell", path: "haskell-setup.sh"
+  		config.vm.synced_folder "..", "/Haxicon"
 	end
 
 Now get the virtual machine running:
@@ -36,6 +37,13 @@ Now get the virtual machine running:
 And ssh into the machine from the directory:
 
 	$ vagrant ssh
+	
+Some commands don't work when placed in haskell-setup.sh, so you'll have to run the following commands manually:
+	
+	$ cabal update
+	$ cabal install Cabal cabal-install
+	$ export PATH=$HOME/.cabal/bin:$PATH
+	$ cabal install hspec
 
 If everything works, `exit` out of your virtual machine and then run:
 
